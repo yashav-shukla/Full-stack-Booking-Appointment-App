@@ -1,7 +1,5 @@
-const e = require("express");
-
 const form = document.getElementById("userForm");
-const usersList=document.getElementById("users");
+const usersList = document.getElementById("users");
 
 const API_URL = "http://localhost:3000/users";
 
@@ -56,7 +54,7 @@ form.addEventListener("submit", async (e) => {
             method: "POST",
 
             headers: {
-                "Content-Type": "application-json"
+                "Content-Type": "application/json"
             },
 
             body: JSON.stringify(user)
@@ -73,7 +71,9 @@ form.addEventListener("submit", async (e) => {
 
 // Delete User
 async function deleteUser(id) {
+
     try {
+
         await fetch(`${API_URL}/${id}`, {
             method: "DELETE"
         });
@@ -85,5 +85,5 @@ async function deleteUser(id) {
     }
 }
 
-//Initial Load
+// Initial Load
 loadUsers();
