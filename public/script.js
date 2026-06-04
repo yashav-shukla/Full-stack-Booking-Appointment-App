@@ -5,7 +5,7 @@ const API_URL = "http://localhost:3000/users";
 
 // Load Users
 async function loadUsers() {
-
+    
     try {
 
         const response = await fetch(API_URL);
